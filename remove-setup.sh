@@ -1,3 +1,5 @@
+# remove npm prefix for current user
+
 source dirs.sh
 
 npm config delete prefix
