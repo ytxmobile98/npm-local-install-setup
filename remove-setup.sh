@@ -1,6 +1,8 @@
 # remove npm prefix for current user
 
-source dirs.sh
+declare -r DIRNAME="$(dirname "$BASH_SOURCE")"
+
+source "$DIRNAME/dirs.sh"
 
 npm config delete prefix
 echo "Deleted npm prefix."

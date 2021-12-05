@@ -1,6 +1,8 @@
 # setup npm prefix for current user
 
-source dirs.sh
+declare -r DIRNAME="$(dirname "$BASH_SOURCE")"
+
+source "$DIRNAME/dirs.sh"
 
 npm config set prefix $npmPackagesDir
 echo "Set npm prefix to \"$(realpath "$npmPackagesDir")\""
