@@ -4,13 +4,13 @@ This repository provides a setup script that allows you to do `npm-install -g` f
 ## Setup
 Run:
 ```shell
-bash setup.sh
+make setup
 ```
 
 ## Remove setup
 Run:
 ```shell
-bash remove-setup.sh
+make clean
 ```
 
 ## References
