@@ -21,6 +21,7 @@ help:
 .PHONY: setup
 setup:
 	@echo "Set current user's NPM packages directory to \"$(NPM_PACKAGES_DIR)\""
+	mkdir -p "$(NPM_PACKAGES_DIR)"
 	npm config set prefix $(NPM_PACKAGES_DIR)
 
 	@$(call LIST_NPM_CONFIG)
@@ -29,5 +30,8 @@ setup:
 clean:
 	@echo "Unset current user's NPM packages directory (currently is \"$(NPM_PACKAGES_DIR)\")"
 	npm config delete prefix
+	if [ -z "$$(ls -A "$(NPM_PACKAGES_DIR)")" ]; then \
+		rm -rf "$(NPM_PACKAGES_DIR)"; \
+	fi
 
 	@$(call LIST_NPM_CONFIG)
